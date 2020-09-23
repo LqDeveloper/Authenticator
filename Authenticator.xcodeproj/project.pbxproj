@@ -67,7 +67,7 @@
 		515B468D251B131400B970D8 /* Authenticator */ = {
 			isa = PBXGroup;
 			children = (
-				515B46BE251B29B800B970D8 /* RxSwift */,
+				515B46BE251B29B800B970D8 /* RxSwiftExtensions */,
 				515B46A3251B131A00B970D8 /* Core */,
 				515B468E251B131400B970D8 /* AppDelegate.swift */,
 				515B4690251B131400B970D8 /* SceneDelegate.swift */,
@@ -88,12 +88,12 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		515B46BE251B29B800B970D8 /* RxSwift */ = {
+		515B46BE251B29B800B970D8 /* RxSwiftExtensions */ = {
 			isa = PBXGroup;
 			children = (
 				515B46C0251B29D000B970D8 /* Authenticator+RxSwift.swift */,
 			);
-			path = RxSwift;
+			path = RxSwiftExtensions;
 			sourceTree = "<group>";
 		};
 		C3D7D4662381C3AD2FA5E465 /* Frameworks */ = {
