@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "Authenticator"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "FaceID,TouchID的验证"
   spec.description  = <<-DESC
                          FaceID,TouchID的验证的工具类

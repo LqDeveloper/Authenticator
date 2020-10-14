@@ -10,7 +10,7 @@ import RxSwift
 
 extension Authenticator:ReactiveCompatible{}
 public extension Reactive where Base : Authenticator{
-    static func authenticateWithBioMetrics(reason: String, fallbackTitle: String? = "", cancelTitle: String? = "") -> Single<Bool>{
+    static func authenticateReturnBool(reason: String, fallbackTitle: String? = "", cancelTitle: String? = "") -> Single<Bool>{
         return Single.create { (single) -> Disposable in
             Base.authenticateWithBioMetrics(reason: reason, fallbackTitle: fallbackTitle, cancelTitle: cancelTitle) { (result) in
                 switch result{
@@ -24,6 +24,17 @@ public extension Reactive where Base : Authenticator{
             }
         }
     }
+    
+    static func authenticateReturnResult(reason: String, fallbackTitle: String? = "", cancelTitle: String? = "") -> Single<Result<Bool, AuthenticationError>>{
+        return Single.create { (single) -> Disposable in
+            Base.authenticateWithBioMetrics(reason: reason, fallbackTitle: fallbackTitle, cancelTitle: cancelTitle) { (result) in
+                single(.success(result))
+            }
+            return Disposables.create {
+            }
+        }
+    }
+    
     
     static func authenticateWithPasscode(reason: String, cancelTitle: String? = "")-> Single<Bool>{
         return Single.create { (single) -> Disposable in
