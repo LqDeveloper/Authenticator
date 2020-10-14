@@ -171,6 +171,26 @@ extension Authenticator {
 }
 
 
+public extension Result where Success == Bool,Failure == AuthenticationError{
+    var isSuccess:Bool{
+        switch self {
+        case .success(_):
+            return true
+        case .failure(_):
+            return false
+        }
+    }
+    
+    var error:AuthenticationError?{
+        switch self {
+        case .success(_):
+            return nil
+        case .failure(let err):
+            return err
+        }
+    }
+}
+
 
 
 public enum AuthenticationError: Error {

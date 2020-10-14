@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         //            }
         //        }
         
-      _ = Authenticator.rx.authenticateWithBioMetrics(reason: "请求生物验证原因", fallbackTitle: "后备验证", cancelTitle: "取消标题").subscribe { (_) in
+      _ = Authenticator.rx.authenticateReturnBool(reason: "请求生物验证原因", fallbackTitle: "后备验证", cancelTitle: "取消标题").subscribe { (_) in
             print("验证成功")
         } onError: { (error) in
             print(error as? AuthenticationError ?? .other)
